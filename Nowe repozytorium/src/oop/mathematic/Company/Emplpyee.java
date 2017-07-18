@@ -7,7 +7,7 @@ public class Emplpyee {
     private int age;
     private double salary;
 
-   /* public String getName() {
+    public String getName() {
         return this.name;
     }
     public void setName (String n){
@@ -37,7 +37,11 @@ public class Emplpyee {
         if ( sa < 0){
             System.out.println("Hajs musi sie zgadzać!");
         }else
-        this.salary = sa;*/
+        this.salary = sa;
 
+
+    }
+    public void describeEmployee () {
+        System.out.println("Name: " + this.name + " Surname: " + this.surname + "Age: " + this.age);
     }
 }

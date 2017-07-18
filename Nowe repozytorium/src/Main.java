@@ -1,4 +1,5 @@
 import excercise.Zadania;
+import excercise.CompanyExcercise;
 import oop.mathematic.Point;
 import oop.mathematic.Circle;
 import oop.mathematic.Firma;
@@ -11,8 +12,10 @@ public class Main {
     public static void main(String[] args) {
 
         //Klasa zawierająca zadania
-        Zadania zadania = new Zadania();
-        zadania.Zad3();
+//        Zadania zadania = new Zadania();
+//        zadania.Zad3();
+        CompanyExcercise companyExcercise = new CompanyExcercise();
+        companyExcercise.start();
     }
 
 

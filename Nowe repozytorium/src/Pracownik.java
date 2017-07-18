@@ -11,6 +11,7 @@ public class Pracownik {
 
 
     public Pracownik(){
+
         pensja = 2000;
     }
     public void Podwyzka(int procent) {
