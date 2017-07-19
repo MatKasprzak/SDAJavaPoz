@@ -33,13 +33,20 @@ public class Matrix {
 
     Scanner scanner = new Scanner(System.in);
 
-    public Matrix() {
+    /*public Matrix(){
         m = 3;
         n = 3;
-        mtrx = new int[m][n];
+    }*/
+    public Matrix(int m, int n) {
+        this.m = m;
+        this.n = n;
+        if (m > 0 && n > 0) {
+            this.mtrx = new int[m][n];
+        } else {
+            System.out.println("nie można zbudować macierzy z ujemnych wartości");
+        }
     }
-
-    public void printMatrix() {
+    public void printMatrix(){
         //wypisanie elementów na konsole
         for (int i = 0; i < m; i++) {
             System.out.println();
@@ -48,10 +55,11 @@ public class Matrix {
 
             }
         }
+        System.out.println();
     }
 
     public void initializeMatrix() {
-        Matrix matrix1 = new Matrix();
+        Matrix matrix1 = new Matrix( m, n);
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.println("Podaj element " + i + " " + j + " macierzy");
@@ -59,18 +67,47 @@ public class Matrix {
             }
         }
     }
-//this.mtrx - obiekt o nazwie macierz
+
+    //this.mtrx - obiekt o nazwie macierz
     //
     public Matrix addMatrix(Matrix drugaMacirz) {
-        Matrix wynikowa = new Matrix();
+        if (this.m == drugaMacirz.getM() && this.n == drugaMacirz.getN()) {
+            Matrix wynikowa = new Matrix(m, n);
 
+
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    wynikowa.mtrx[i][j] = this.mtrx[i][j] + drugaMacirz.mtrx[i][j];
+                }
+            }
+            return wynikowa;
+
+        }else
+            return wynikowa;
+    }
+
+    public Matrix substractMatrix(Matrix drugaMacierz) {
+        Matrix wynikowa = new Matrix(m, n);
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                wynikowa.getMtrx()[i][j] = this.mtrx[i][j] + drugaMacirz.getMtrx()[i][j];
+                wynikowa.mtrx[i][j] = this.mtrx[i][j] - drugaMacierz.mtrx[i][j];
+
             }
-        }return wynikowa;
 
+        }
+        return wynikowa;
     }
+//Do poprawy
+   /* public Matrix multiplyMatrix(Matrix drugaMacierz) {
+        Matrix wynikowa = new Matrix();
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                wynikowa.mtrx[i][j] = this.mtrx[0][j] * drugaMacierz.mtrx[i][0] + this.mtrx[1][j] * drugaMacierz.mtrx[i][1] +
+                        this.mtrx[2][j] * drugaMacierz.mtrx[i][2];
+            }
+        }
 
+        return wynikowa;
+    }*/
 }

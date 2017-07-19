@@ -10,9 +10,10 @@ public class Main {
     public static void main(String[] args) {
 
         //Klasa zawierajaca zadania
-       /* CompanyExcercise ce = new CompanyExcercise();
-        ce.start();*/
+        //CompanyExcercise ce = new CompanyExcercise();
+        //ce.start();
         MatrixExcercise macierz = new MatrixExcercise();
         macierz.start();
+
     }
 }
