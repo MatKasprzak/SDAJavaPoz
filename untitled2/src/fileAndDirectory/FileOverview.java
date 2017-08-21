@@ -57,4 +57,17 @@ public class FileOverview {
             }
         }
     }
+
+    public static void createNote(){}
+
+    public static void createFileWithResources(String path) {
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path));
+            bufferedWriter.write("Wiadomosc");
+        } catch (IOException e) {
+            e.printStackTrace();
+
+
+        }
+    }
 }
