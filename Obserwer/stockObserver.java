@@ -7,7 +7,7 @@ public class stockObserver extends Observer<Stock> {
     }
 
     @Override
-    public void onChange(Object sender, PriceChangedEventArgs e){
+    protected void onChange(Stock sender, PriceChangedEventArgs e){
         System.out.println("Cena sie zmieniła, Stara cena: " + e.getOldPrice() + " nowa cena: " + e.getNewPrice());
     }
 }
