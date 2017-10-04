@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL55Dialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.pool_size">200</property>
+
+        <property name="show_sql">true</property>
+
+  		<property name="hibernate.hbm2ddl.auto">update</property>
+        <mapping class="ogloszenia.model.Test" />
+        <mapping class="ogloszenia.model.Zabawka" />
+        <mapping class="ogloszenia.model.Zamowienie" />
+        <mapping class="ogloszenia.model.PozycjaZamowienia" />
+        <mapping class="ogloszenia.model.Atest" />
+
+        <mapping class="carrent.account.User" />
+        <mapping class="carrent.rent.Car" />
+        <mapping class="carrent.rent.Customer" />
+        <mapping class="carrent.rent.Rent" />
+        <mapping class="carrent.rent.Option" />
+
+
+    </session-factory>
+</hibernate-configuration>
