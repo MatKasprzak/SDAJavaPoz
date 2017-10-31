@@ -14,7 +14,7 @@ import javax.jws.WebParam;
 @Controller
 public class HomeController {
 
-@Qualifier("smallNumbersGenerator")
+//@Qualifier("smallNumbersGenerator")
     @Autowired
     private RandomGeneratorNumberService randomGeneratorNumberService;
 
