@@ -23,6 +23,7 @@ public class CalcController {
     int firstValue = numberGenerator.generateNumber();
     int secondValue = numberGenerator.generateNumber();
     System.out.println(firstValue +"+"+ secondValue+ "="+ calcService.multiply(firstValue, secondValue));
+
     return new ModelAndView("home");
 }
 

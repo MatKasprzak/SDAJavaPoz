@@ -13,10 +13,11 @@ public class NumberGeneratorServiceConfiguration {
     public RandomGeneratorNumberService randomGeneratorNumberService() {
         return new RandomGeneratorNumberService();
     }
-    @Bean
+//    @Bean
     public RandomGeneratorNumberService smallNumbersGenerator(){
         return new RandomGeneratorNumberService(50,0);
     }
+    @Profile("prod")
     @Bean
     public RandomGeneratorNumberService bigNumbersGenerator(){
         RandomGeneratorNumberService randomGeneratorNumberService = new RandomGeneratorNumberService();

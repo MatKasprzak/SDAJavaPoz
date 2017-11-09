@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:border="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li th:each="news : ${allNews}" style="border: 1px solid black; margin: 20px 0">
+        <h1 th:text="${news.title}">Title</h1>
+        <h6 th:text="${news.author.firstName} + ' ' + ${news.author.lastName} + ' - ' + ${news.date}">Jan Kowlaski - 21.06.2017</h6>
+        <p th:text="${news.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad animi, architecto, atque consequatur, debitis explicabo impedit maiores officia quae qui suscipit vel voluptas. Consequuntur distinctio dolores odit repellendus? Inventore?</p>
+    </li>
+</ul>
+</body>
+</html>
