@@ -17,10 +17,12 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+
+
     @PostMapping
     public String saveEmployee(@ModelAttribute Employee employee) {
         employeeService.saveEmployee(employee);
-        return "redirect:/employee";
+        return "redirect:/employees";
     }
 
     @GetMapping
@@ -31,7 +33,7 @@ public class EmployeeController {
         return modelAndView;
     }
     @GetMapping("/{id}")
-    public ModelAndView getEmployee(@PathVariable ("id") int id){
+    public ModelAndView getEmployee(@PathVariable ("id") long id){
         ModelAndView modelAndView = new ModelAndView("employee");
         Employee employee = employeeService.getEmployee(id);
         modelAndView.addObject("employee", employee);

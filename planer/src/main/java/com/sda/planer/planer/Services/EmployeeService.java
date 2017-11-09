@@ -14,17 +14,17 @@ public class EmployeeService {
 
 
     private EmployeeRepository employeeRepository;
-    
+
     @Autowired
     public EmployeeService(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
 
 
-    public List<Employee> getAllEmployees(){
-        return StreamSupport.stream(employeeRepository.findAll().spliterator(),false)
-                .collect(Collectors.toList());
+    public List<Employee> getAllEmployees() {
+        return (List<Employee>) employeeRepository.findAll();
     }
+
     public Employee getEmployee(long id){
         return employeeRepository.findOne(id);
     }

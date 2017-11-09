@@ -1,7 +1,5 @@
 package com.sda.planer.planer.model;
 
-import lombok.Data;
-
 import javax.persistence.*;
 
 
@@ -11,14 +9,16 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String firstName;
+    private String lastName;
     private String phoneNumber;
     private String email;
     @Enumerated(EnumType.STRING)
     private EmployeeDepartment department;
 
-    public Employee(long id, String firstName, String phoneNumber, String email, EmployeeDepartment department) {
+    public Employee(long id, String firstName, String lastName, String phoneNumber, String email, EmployeeDepartment department) {
         this.id = id;
         this.firstName = firstName;
+        this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.department = department;
@@ -65,5 +65,13 @@ public class Employee {
 
     public void setDepartment(EmployeeDepartment department) {
         this.department = department;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
