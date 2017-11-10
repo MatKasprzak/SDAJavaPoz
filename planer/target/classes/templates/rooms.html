@@ -55,16 +55,16 @@
 
 <div class="container">
     <div class="row">
-        <div th:if="${employee} != null">
-            <h6 th:text="${employee.formattedDepartment}">Backend</h6>
-            <h1 th:text="${employee.firstName} + ' ' + ${employee.lastName}">Szymon Nowak</h1>
+        <div th:if="${room} != null">
+
+            <h1 th:text="${room.name} + ' ' + ${room.id}">Sala 1</h1>
             <p>
-                <span th:text="'Telephone Number:' + ${employee.phoneNumber}">Telephone Number: 23643746237</span><br>
-                <span th:text="'Email: ' + ${employee.email}">Email: nowszy94@gmail.com</span>
+                <span th:text="'Pojemność:' + ${room.capacity}">Pojemność: 100</span><br>
+
             </p>
         </div>
-        <div th:unless="${employee} != null">
-            There's no employee with that id
+        <div th:unless="${room} != null">
+            There's no room with that id
         </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:thi="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -54,20 +54,14 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        <div th:if="${employee} != null">
-            <h6 th:text="${employee.formattedDepartment}">Backend</h6>
-            <h1 th:text="${employee.firstName} + ' ' + ${employee.lastName}">Szymon Nowak</h1>
-            <p>
-                <span th:text="'Telephone Number:' + ${employee.phoneNumber}">Telephone Number: 23643746237</span><br>
-                <span th:text="'Email: ' + ${employee.email}">Email: nowszy94@gmail.com</span>
-            </p>
-        </div>
-        <div th:unless="${employee} != null">
-            There's no employee with that id
-        </div>
-    </div>
+<div thi:if="${room} != null">
+   <h1 th:text="${room.name} + ' (' + ${room.capacity} + ' )'">Winikiel - (16)</h1>
 </div>
+    <div th:unless="${room} != null">
+        There is no room with that id
+    </div>
+</div><!-- /.container -->
+
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

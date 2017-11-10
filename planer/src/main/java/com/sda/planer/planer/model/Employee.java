@@ -1,6 +1,11 @@
 package com.sda.planer.planer.model;
 
+
+
+import org.apache.commons.lang3.StringUtils;
+
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -14,6 +19,8 @@ public class Employee {
     private String email;
     @Enumerated(EnumType.STRING)
     private EmployeeDepartment department;
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "attendees")
+    private List<Meeting> meetingList;
 
     public Employee(long id, String firstName, String lastName, String phoneNumber, String email, EmployeeDepartment department) {
         this.id = id;
@@ -22,6 +29,11 @@ public class Employee {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.department = department;
+    }
+
+    public String getFormattedDepartment(){
+        String lowerCased = StringUtils.lowerCase(department.toString());
+        return StringUtils.capitalize(lowerCased);
     }
 
     public Employee() {

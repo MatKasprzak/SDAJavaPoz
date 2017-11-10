@@ -59,8 +59,8 @@
         <div class="col-xs-6">
             <div class="list-group" th:each="employee : ${employees}">
                 <a href="#"
-                   th:href="'/employees' ${employee.id}"
-                   th:text="$(employee.firstName) + ' ' + $(employee.lastName)"
+                   th:href="'/employees/' + ${employee.id}"
+                   th:text="${employee.firstName} + ' ' + ${employee.lastName}"
                    class="list-group-item">
                     Item 1
                 </a>

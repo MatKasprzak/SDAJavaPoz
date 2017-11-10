@@ -54,20 +54,38 @@
 </div>
 
 <div class="container">
+
     <div class="row">
-        <div th:if="${employee} != null">
-            <h6 th:text="${employee.formattedDepartment}">Backend</h6>
-            <h1 th:text="${employee.firstName} + ' ' + ${employee.lastName}">Szymon Nowak</h1>
-            <p>
-                <span th:text="'Telephone Number:' + ${employee.phoneNumber}">Telephone Number: 23643746237</span><br>
-                <span th:text="'Email: ' + ${employee.email}">Email: nowszy94@gmail.com</span>
-            </p>
+        <div class="col=xs-6">
+            <div class="list-group" th:each="room: ${rooms}">
+                <a href="#"
+                   th:href="'/rooms/' + ${room.id}"
+                   th:text="${room.name} + ' (' + ${room.capacity} + ')'"
+                   class="list-group-item ">Winkiel (20)</a>
+
+            </div>
         </div>
-        <div th:unless="${employee} != null">
-            There's no employee with that id
+        <div class="col-xs-6">
+            <form action="/rooms" method="post" role="form">
+                <legend>Form Title</legend>
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Input...">
+                </div>
+                <div class="form-group">
+                    <label for="capacity">Capacity</label>
+                    <input type="number" class="form-control" name="capacity" id="capacity" placeholder="Input...">
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </div>
-</div>
+
+</div><!-- /.container -->
+
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

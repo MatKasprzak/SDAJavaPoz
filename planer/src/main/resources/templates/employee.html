@@ -54,13 +54,20 @@
 </div>
 
 <div class="container">
-    <h6 th:text="${employee.formatedDepartment}">Backend</h6>
-    <h1 th:text="${employee.firstName} + ' ' + ${employee.lastName}">Mateusz Kasprzak</h1>
-    <p><span th:text="'TelephoneNumber:' + ${employee.phoneNumber}">Telephone Nmber: 24568742658742</span>
-   <span th:text="'Email: ' + ${employee.email}"> Email:sahgtwlrah@sigto.pl</span></p>
-
-</div><!-- /.container -->
-
+    <div class="row">
+        <div th:if="${employee} != null">
+            <h6 th:text="${employee.formattedDepartment}">Backend</h6>
+            <h1 th:text="${employee.firstName} + ' ' + ${employee.lastName}">Szymon Nowak</h1>
+            <p>
+                <span th:text="'Telephone Number:' + ${employee.phoneNumber}">Telephone Number: 23643746237</span><br>
+                <span th:text="'Email: ' + ${employee.email}">Email: nowszy94@gmail.com</span>
+            </p>
+        </div>
+        <div th:unless="${employee} != null">
+            There's no employee with that id
+        </div>
+    </div>
+</div>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

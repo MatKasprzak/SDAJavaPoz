@@ -21,15 +21,15 @@ public class EmployeeController {
 
     @PostMapping
     public String saveEmployee(@ModelAttribute Employee employee) {
-        employeeService.saveEmployee(employee);
-        return "redirect:/employees";
+        int index =  employeeService.saveEmployee(employee);
+        return "redirect:/employees/" + index;
     }
 
     @GetMapping
     public ModelAndView getAllEmployees() {
         ModelAndView modelAndView = new ModelAndView("allEmployees");
         modelAndView.addObject("message", "HelloWorld");
-        modelAndView.addObject("employee", employeeService.getAllEmployees());
+        modelAndView.addObject("employees", employeeService.getAllEmployees());
         return modelAndView;
     }
     @GetMapping("/{id}")
