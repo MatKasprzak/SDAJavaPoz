@@ -8,27 +8,26 @@ public class Controlllers {
     public static void controller(Snake snake, GameFieldClass[] gameField) {
         Scanner sc = new Scanner(System.in);
         int turn = sc.nextInt();
-        int currentdirection = 0;
         switch (turn) {
             case 0: {
-                SnakeMethods.directionMover(currentdirection, snake, gameField);
+                SnakeMethods.directionMover(snake.currentdirection, snake, gameField);
+                break;
             }
             case 1: {
-                if (currentdirection == 0) {
-                    currentdirection = 3;
-                } else {
-                    currentdirection += 1;
+                snake.currentdirection += 1;
+                if (snake.currentdirection == 4) {
+                    snake.currentdirection = 0;
                 }
-                SnakeMethods.directionMover(currentdirection, snake, gameField);
-
+                SnakeMethods.directionMover(snake.currentdirection, snake, gameField);
+                break;
             }
             case 2: {
-                if (currentdirection == 3) {
-                    currentdirection = 0;
-                } else {
-                    currentdirection -= 1;
+                snake.currentdirection -= 1;
+                if (snake.currentdirection == -1) {
+                    snake.currentdirection = 3;
                 }
-                SnakeMethods.directionMover(currentdirection, snake, gameField);
+                SnakeMethods.directionMover(snake.currentdirection, snake, gameField);
+                break;
             }
         }
     }
